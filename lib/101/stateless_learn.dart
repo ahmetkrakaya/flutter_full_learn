@@ -9,28 +9,43 @@ class StatelessLearn extends StatelessWidget {
       appBar: AppBar(),
       body: Column(
         children: [
-          const TitleTextWidget(
+           const TitleTextWidget(
             text: 'ahmet',
           ),
-          const TitleTextWidget(
+           const TitleTextWidget(
             text: 'nazif',
           ),
-          const TitleTextWidget(
+           buildSizedBox(),
+           const TitleTextWidget(
             text: 'ebrar',
           ),
-          const TitleTextWidget(
+           const TitleTextWidget(
             text: 'mustafa',
           ),
-          const TitleTextWidget(
+           const TitleTextWidget(
             text: 'hatice',
           ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.red,
-            ),
-          ),
+           const _CustomContainer(),
+          buildSizedBox(),
         ],
+      ),
+    );
+  }
+
+  SizedBox buildSizedBox() => const SizedBox(height: 10,);
+}
+
+class _CustomContainer extends StatelessWidget {
+  const _CustomContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.red,
       ),
     );
   }
@@ -38,6 +53,7 @@ class StatelessLearn extends StatelessWidget {
 
 class TitleTextWidget extends StatelessWidget {
   const TitleTextWidget({Key? key, required this.text}) : super(key: key);
+
   final String text;
 
   @override

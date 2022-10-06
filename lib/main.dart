@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_full_learn/101/appbar_learn.dart';
-import 'package:flutter_full_learn/101/button_learn.dart';
-import 'package:flutter_full_learn/101/color_learn.dart';
-import 'package:flutter_full_learn/101/container_sizedbox_learn.dart';
-import 'package:flutter_full_learn/101/icon_learn.dart';
-import 'package:flutter_full_learn/101/scaffold_learn.dart';
-import 'package:flutter_full_learn/101/stateless_learn.dart';
-import 'package:flutter_full_learn/101/text_view_learn.dart';
+import 'package:flutter_full_learn/101/page_view_learn.dart';
+import 'package:flutter_full_learn/101/stateful_life_cycle_learn.dart';
+import 'package:flutter_full_learn/101/text_field_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,15 +17,30 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Learn',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
+        listTileTheme: const ListTileThemeData(
+          contentPadding: EdgeInsets.zero,
+        ),
+        progressIndicatorTheme: const ProgressIndicatorThemeData(
+          color: Colors.white,
+        ),
+        inputDecorationTheme: const InputDecorationTheme(
+          filled: true,
+          fillColor: Colors.redAccent,
+          iconColor: Colors.white,
+          border: OutlineInputBorder(),
+          labelStyle: TextStyle(color: Colors.white,fontSize: 24),
+        ),
         appBarTheme: const AppBarTheme(
           centerTitle: true,
           backgroundColor: Colors.transparent,
           elevation: 0,
           systemOverlayStyle: SystemUiOverlayStyle.light,
-
+        ),
+        cardTheme: CardTheme(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         ),
       ),
-      home: const StatelessLearn(),
+      home: const TextFieldLearn(),
     );
   }
 }
