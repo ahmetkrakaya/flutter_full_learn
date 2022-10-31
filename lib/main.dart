@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_full_learn/101/page_view_learn.dart';
-import 'package:flutter_full_learn/101/stateful_life_cycle_learn.dart';
-import 'package:flutter_full_learn/101/text_field_learn.dart';
+import 'package:flutter_full_learn/202/theme/light_theme.dart';
+
+import '202/form_learn_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +15,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Learn',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
+      theme: LightTheme().theme,
+      /*
+      ThemeData.dark().copyWith(
+        tabBarTheme: const TabBarTheme(
+          labelColor: Colors.white,
+          unselectedLabelColor: Colors.red,
+          indicatorSize: TabBarIndicatorSize.label,
+        ),
         listTileTheme: const ListTileThemeData(
           contentPadding: EdgeInsets.zero,
         ),
@@ -40,7 +46,8 @@ class MyApp extends StatelessWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         ),
       ),
-      home: const TextFieldLearn(),
+      */
+      home: const FormLearnView(),
     );
   }
 }
