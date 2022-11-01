@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_full_learn/202/theme/light_theme.dart';
 
+import '202/cache/secure_storage/secure_storage_learn.dart';
+import '202/cache/shared_learn_cache.dart';
+import '202/cache/shared_list_cache.dart';
 import '202/form_learn_view.dart';
 
 void main() {
@@ -47,7 +50,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       */
-      home: const FormLearnView(),
+      home: const SharedStorageLearn(),
     );
   }
 }
