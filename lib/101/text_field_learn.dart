@@ -21,10 +21,9 @@ class _TextFieldLearnState extends State<TextFieldLearn> {
         children: [
           TextField(
             maxLength: 20,
-            buildCounter: (BuildContext context,
-                {int? currentLength, bool? isFocused, int? maxLength}) {
+            buildCounter: (BuildContext context, {int? currentLength, bool? isFocused, int? maxLength}) {
               return AnimatedContainer(
-                duration: Duration(milliseconds: 100),
+                duration: const Duration(milliseconds: 100),
                 height: 10,
                 width: 40,
                 color: Colors.green[100 * ((currentLength ?? 0) ~/ 2)],
@@ -34,7 +33,7 @@ class _TextFieldLearnState extends State<TextFieldLearn> {
             autofillHints: const [
               AutofillHints.email,
             ],
-            inputFormatters: [TextProjectInputFormatters()._formatter],
+            //dg  inputFormatters: [TextProjectInputFormatters()._formatter],
             focusNode: focusNodeTextFieldOne,
             textInputAction: TextInputAction.next,
             decoration: _InputDecorator()._emailInput,
@@ -58,7 +57,7 @@ class TextProjectInputFormatters {
   });
 }
 
-class _InputDecorator{
+class _InputDecorator {
   final _emailInput = const InputDecoration(
     prefixIcon: Icon(Icons.mail),
     border: OutlineInputBorder(),

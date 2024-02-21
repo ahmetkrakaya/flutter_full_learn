@@ -16,8 +16,7 @@ class _TabLearnState extends State<TabLearn> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _tabController =
-        TabController(length: _myTabViews.values.length, vsync: this);
+    _tabController = TabController(length: _myTabViews.values.length, vsync: this);
   }
 
   @override

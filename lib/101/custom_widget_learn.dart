@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomWidgetLearn extends StatelessWidget {
-  CustomWidgetLearn({Key? key}) : super(key: key);
+  const CustomWidgetLearn({Key? key}) : super(key: key);
 
   final String title = 'Food';
   final String addCard = 'Add to Card';
@@ -18,12 +18,20 @@ class CustomWidgetLearn extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
-                child: CustomButton(title: addCard,onPressed: (){},),
+                child: CustomButton(
+                  title: addCard,
+                  onPressed: () {},
+                ),
               ),
             ),
           ),
-          const SizedBox(height: 20,),
-          CustomButton(title: title,onPressed: (){},),
+          const SizedBox(
+            height: 20,
+          ),
+          CustomButton(
+            title: title,
+            onPressed: () {},
+          ),
         ],
       ),
     );
@@ -41,7 +49,8 @@ class _PaddingUtility {
 }
 
 class CustomButton extends StatelessWidget with _ColorUtility, _PaddingUtility {
-  CustomButton({Key? key, required this.title, required this.onPressed}) : super(key: key);
+  CustomButton({Key? key, required this.title, required this.onPressed})
+      : super(key: key);
 
   final String title;
   final VoidCallback onPressed;

@@ -25,13 +25,15 @@ class NoteDemoView extends StatelessWidget {
             _TitleWidget(title: _headText),
             Padding(
               padding: PaddingItems.verticalPadding,
-              child: _subTextWidget(
+              child: SubTextWidget(
                 text: _description,
               ),
             ),
             const Spacer(),
             _createButton(context),
             TextButton(
+              style: TextButton.styleFrom(
+                  foregroundColor: Colors.blueAccent.shade400),
               onPressed: () {},
               child: Text(_textButtonText),
             ),
@@ -67,10 +69,10 @@ class NoteDemoView extends StatelessWidget {
 }
 
 //Center Text widget
-class _subTextWidget extends StatelessWidget {
-  const _subTextWidget(
+class SubTextWidget extends StatelessWidget {
+  const SubTextWidget(
       {super.key, required this.text, this.textAlign = TextAlign.center});
-  final TextAlign? textAlign;
+  final TextAlign textAlign;
   final String text;
 
   @override
@@ -80,7 +82,7 @@ class _subTextWidget extends StatelessWidget {
       textAlign: textAlign,
       style: Theme.of(context).textTheme.labelLarge?.copyWith(
             color: Colors.black87,
-        fontSize: 18,
+            fontSize: 18,
           ),
     );
   }
@@ -123,7 +125,6 @@ class MyImages extends StatelessWidget {
       _nameWithPath(),
       fit: BoxFit.cover,
     );
-    ;
   }
 
   String _nameWithPath() => 'assets/images/$name';

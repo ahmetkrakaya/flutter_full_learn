@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_full_learn/101/image_learn.dart';
 import 'package:flutter_full_learn/101/navigate_detail_learn.dart';
 
 class NavigationLearn extends StatefulWidget {
@@ -9,8 +8,7 @@ class NavigationLearn extends StatefulWidget {
   State<NavigationLearn> createState() => _NavigationLearnState();
 }
 
-class _NavigationLearnState extends State<NavigationLearn>
-    with NavigatorManager {
+class _NavigationLearnState extends State<NavigationLearn> with NavigatorManager {
   List<int> selectedItems = [];
 
   void isSelected(int index, bool response) {
@@ -23,21 +21,19 @@ class _NavigationLearnState extends State<NavigationLearn>
     return Scaffold(
       appBar: AppBar(),
       body: ListView.builder(
+        itemCount: 5,
         itemBuilder: (context, index) {
           return TextButton(
-            onPressed: () async{
+            onPressed: () async {
               final response = await navigateToWidgetNormal<bool>(
-                  context,
-                  NavigateDetailLearn(
-                isCheck: selectedItems.contains(index),
-              ));
+                  context, NavigateDetailLearn(isCheck: selectedItems.contains(index)));
 
               if (response is bool) {
                 isSelected(index, response);
               }
             },
             child: Placeholder(
-                color: selectedItems.contains(index) ? Colors.green : Colors.red,
+              color: selectedItems.contains(index) ? Colors.green : Colors.red,
             ),
           );
         },
@@ -66,9 +62,7 @@ mixin NavigatorManager {
           return widget;
         },
         fullscreenDialog: true,
-        settings: const RouteSettings(
-
-        ),
+        settings: const RouteSettings(),
       ),
     );
   }

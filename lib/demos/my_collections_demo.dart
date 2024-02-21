@@ -19,7 +19,10 @@ class _MyCollectionDemoState extends State<MyCollectionDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: const Icon(Icons.chevron_left),
+        title: const Text('My Collections'),
+      ),
       body: ListView.builder(
           padding: PaddingUtility().paddingHorizantal,
           itemCount: _items.length,
@@ -32,7 +35,6 @@ class _MyCollectionDemoState extends State<MyCollectionDemo> {
 
 class _CategoryCard extends StatelessWidget {
   const _CategoryCard({
-    super.key,
     required CollectionModel model,
   }) : _model = model;
 
@@ -83,43 +85,29 @@ class CollectionModel {
   final String title;
   final double price;
 
-  CollectionModel(
-      {required this.imagePath, required this.title, required this.price});
+  CollectionModel({required this.imagePath, required this.title, required this.price});
 }
 
-class CollectionItems{
+class CollectionItems {
   late final List<CollectionModel> items;
 
-  CollectionItems(){
+  CollectionItems() {
     items = [
-      CollectionModel(
-          imagePath: ProjectImages.imageCollection,
-          title: 'Abstract Art 1',
-          price: 3.1),
-      CollectionModel(
-          imagePath: ProjectImages.imageCollection,
-          title: 'Abstract Art 2',
-          price: 3.2),
-      CollectionModel(
-          imagePath: ProjectImages.imageCollection,
-          title: 'Abstract Art 3',
-          price: 3.3),
-      CollectionModel(
-          imagePath: ProjectImages.imageCollection,
-          title: 'Abstract Art 4',
-          price: 3.4),
+      CollectionModel(imagePath: ProjectImages.imageCollection, title: 'Abstract Art 1', price: 3.1),
+      CollectionModel(imagePath: ProjectImages.imageCollection, title: 'Abstract Art 2', price: 3.2),
+      CollectionModel(imagePath: ProjectImages.imageCollection, title: 'Abstract Art 3', price: 3.3),
+      CollectionModel(imagePath: ProjectImages.imageCollection, title: 'Abstract Art 4', price: 3.4),
     ];
   }
 }
 
-class PaddingUtility{
+class PaddingUtility {
   final paddingTop = const EdgeInsets.only(top: 10);
   final paddingBottom = const EdgeInsets.only(bottom: 20);
   final paddingGeneral = const EdgeInsets.all(20);
   final paddingHorizantal = const EdgeInsets.symmetric(horizontal: 20);
 }
 
-
-class ProjectImages{
+class ProjectImages {
   static const imageCollection = 'assets/images/image2.webp';
 }

@@ -11,7 +11,11 @@ class IndicatorLearn extends StatelessWidget {
           CenterCircularIndicator(),
         ],
       ),
-      body: CenterCircularIndicator(),
+      body: const LinearProgressIndicator(
+        value: 0.7,
+        backgroundColor: Colors.white,
+        color: Colors.redAccent,
+      ),
     );
   }
 }

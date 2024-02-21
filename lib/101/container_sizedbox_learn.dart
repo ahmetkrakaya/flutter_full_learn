@@ -26,8 +26,7 @@ class ContainerSizedBoxLearn extends StatelessWidget {
             ),
             padding: const EdgeInsets.all(10),
             margin: const EdgeInsets.all(10),
-            decoration: ProjectUtility.boxDecoration,
-            child: Text('a' * 20),
+            decoration: ProjectContainerDecoration(),
           ),
         ],
       ),
@@ -35,23 +34,22 @@ class ContainerSizedBoxLearn extends StatelessWidget {
   }
 }
 
-class ProjectUtility{
+class ProjectUtility {
   static BoxDecoration boxDecoration = BoxDecoration(
-  shape: BoxShape.rectangle,
-  border: Border.all(
-  width: 2,
-  color: Colors.white,
-  ),
-  boxShadow: const [
-  BoxShadow(
-  color: Colors.green,
-  offset: Offset(0.1, 1),
-  blurRadius: 18,
-  ),
-  ],
-  borderRadius: BorderRadius.circular(12),
-  gradient: const LinearGradient(colors: [Colors.green, Colors.blueAccent]),
-
+    shape: BoxShape.rectangle,
+    border: Border.all(
+      width: 2,
+      color: Colors.white,
+    ),
+    boxShadow: const [
+      BoxShadow(
+        color: Colors.green,
+        offset: Offset(0.1, 1),
+        blurRadius: 18,
+      ),
+    ],
+    borderRadius: BorderRadius.circular(12),
+    gradient: const LinearGradient(colors: [Colors.green, Colors.blueAccent]),
   );
 }
 
@@ -61,16 +59,17 @@ class ProjectContainerDecoration extends BoxDecoration {
           shape: BoxShape.rectangle,
           border: Border.all(
             width: 2,
-            color: Colors.white,
+            color: Colors.black,
           ),
           boxShadow: const [
             BoxShadow(
-              color: Colors.green,
+              color: Colors.yellow,
               offset: Offset(0.1, 1),
               blurRadius: 18,
             ),
           ],
           borderRadius: BorderRadius.circular(12),
-          gradient: const LinearGradient(colors: [Colors.green, Colors.blueAccent]),
+          gradient:
+              const LinearGradient(colors: [Colors.green, Colors.blueAccent]),
         );
 }

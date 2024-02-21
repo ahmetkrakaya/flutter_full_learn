@@ -1,23 +1,63 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class LightTheme{
+class LightTheme {
   final _lightColor = _LightColor();
-  late ThemeData theme;
+  final _darkColor = _DarkColor();
+  late ThemeData light;
+  late ThemeData dark;
 
-  LightTheme(){
-    theme = ThemeData(
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(backgroundColor: Colors.green),
-
-      colorScheme: const ColorScheme.light(
-        
+  LightTheme() {
+    dark = ThemeData(
+      colorScheme: const ColorScheme.dark(),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Colors.yellowAccent),
+      textTheme: ThemeData.dark().textTheme.copyWith(
+          titleMedium: TextStyle(fontSize: 25, color: _darkColor._textColor)),
+      buttonTheme: const ButtonThemeData(textTheme: ButtonTextTheme.accent),
+      appBarTheme: const AppBarTheme(
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
+      tabBarTheme: const TabBarTheme(
+        labelColor: Colors.white,
+        unselectedLabelColor: Colors.red,
+        indicatorSize: TabBarIndicatorSize.label,
+      ),
+      listTileTheme: const ListTileThemeData(
+        contentPadding: EdgeInsets.zero,
+      ),
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
+        color: Colors.white,
+      ),
+      inputDecorationTheme: const InputDecorationTheme(
+        filled: true,
+        fillColor: Colors.redAccent,
+        iconColor: Colors.white,
+        border: OutlineInputBorder(),
+        labelStyle: TextStyle(color: Colors.white, fontSize: 24),
+      ),
+      cardTheme: CardTheme(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      ),
+    );
 
+    light = ThemeData(
+      floatingActionButtonTheme:
+          const FloatingActionButtonThemeData(backgroundColor: Colors.green),
+      colorScheme: const ColorScheme.light(),
       textTheme: ThemeData.light().textTheme.copyWith(
-        subtitle1: TextStyle(fontSize: 25,color: _lightColor._textColor)),
+          titleMedium: TextStyle(fontSize: 25, color: _lightColor._textColor)),
     );
   }
 }
 
-class _LightColor{
+class _LightColor {
   final Color _textColor = Colors.redAccent;
+}
+
+class _DarkColor {
+  final Color _textColor = Colors.white;
 }

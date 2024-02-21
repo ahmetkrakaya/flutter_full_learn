@@ -5,44 +5,47 @@ class StatelessLearn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var text2 = 'Mustafa';
+    var text3 = 'Hatice';
     return Scaffold(
       appBar: AppBar(),
       body: Column(
         children: [
-           const TitleTextWidget(
-            text: 'ahmet',
+          TitleTextWidget(
+            text: text2,
           ),
-           const TitleTextWidget(
-            text: 'nazif',
+          TitleTextWidget(
+            text: text3,
           ),
-           buildSizedBox(),
-           const TitleTextWidget(
-            text: 'ebrar',
-          ),
-           const TitleTextWidget(
-            text: 'mustafa',
-          ),
-           const TitleTextWidget(
-            text: 'hatice',
-          ),
-           const _CustomContainer(),
           buildSizedBox(),
+          const TitleTextWidget(
+            text: 'Nazif',
+          ),
+          const TitleTextWidget(
+            text: 'Ahmet',
+          ),
+          const TitleTextWidget(
+            text: 'Ebrar',
+          ),
+          buildSizedBox(),
+          const _CustomContainer(),
         ],
       ),
     );
   }
 
-  SizedBox buildSizedBox() => const SizedBox(height: 10,);
+  SizedBox buildSizedBox() => const SizedBox(
+        height: 10,
+      );
 }
 
 class _CustomContainer extends StatelessWidget {
-  const _CustomContainer({
-    super.key,
-  });
+  const _CustomContainer();
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 200,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.red,

@@ -17,19 +17,22 @@ class _ColorLifeCycleViewState extends State<ColorLifeCycleView> {
       appBar: AppBar(
         actions: [
           IconButton(
-              onPressed: (){
-                setState(() {
-                  _backGroundColor = Colors.pink;
-                });
-              },
-              icon: const Icon(Icons.clear),
+            onPressed: () {
+              setState(() {
+                _backGroundColor = Colors.pink;
+              });
+            },
+            icon: const Icon(Icons.clear),
           ),
         ],
       ),
       body: Column(
         children: [
-          Spacer(),
-          Expanded(child: ColorViewDemo(initialColor: _backGroundColor,)),
+          const Spacer(),
+          Expanded(
+              child: ColorViewDemo(
+            initialColor: _backGroundColor,
+          )),
         ],
       ),
     );

@@ -42,6 +42,12 @@ class StackDemoView extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       color: Colors.white,
+      child: const Center(
+        child: Text(
+          'Ahmet',
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
     );
   }
 }

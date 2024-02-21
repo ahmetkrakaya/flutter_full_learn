@@ -7,15 +7,18 @@ class ColorLearn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Container(
-        color: ColorItems.porchase,
-          child: const Text('data'),
+      body: Center(
+        child: Container(
+          height: 200,
+          width: 200,
+          color: ColorItems.sulu,
+        ),
       ),
     );
   }
-}
+} //
 
-class ColorItems{
-  static const Color porchase = Color(0xffEDBF61);
+class ColorItems {
+  static const Color porsche = Color(0xffEDBF61);
   static const Color sulu = Color.fromRGBO(198, 237, 97, 1);
 }

@@ -18,23 +18,27 @@ class ScaffoldLearn extends StatelessWidget {
         child: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: '1'),
-            BottomNavigationBarItem(icon: Icon(Icons.access_alarm_outlined), label: '2'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.access_alarm_outlined), label: '2'),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
-              context: context,
-              builder: (context) => Container(
-                height: 200,
-              ),
+            context: context,
+            builder: (context) => Container(
+              height: 200,
+            ),
           );
         },
         child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      drawer: const Drawer(),
+      drawer: const Drawer(
+        backgroundColor: Colors.cyanAccent,
+        elevation: 3,
+      ),
       backgroundColor: Colors.red,
     );
   }

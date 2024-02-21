@@ -75,11 +75,11 @@ class IconLearn extends StatelessWidget {
   }
 }
 
-class IconSizes{
+class IconSizes {
   final double iconBig = 48;
   final double iconSmall = 24;
 }
 
-class IconColors{
-  final Color froly = Color(0xffED617A);
+class IconColors {
+  final Color froly = const Color(0xffED617A);
 }

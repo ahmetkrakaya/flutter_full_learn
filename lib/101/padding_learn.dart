@@ -6,21 +6,27 @@ class PaddingLearn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Padding'),
+      ),
       body: Padding(
         padding: ProjectPadding.pagePaddingVertical,
         child: Column(
           children: [
-            Container(
-              color: Colors.white,
-              height: 100,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                color: Colors.white,
+                height: 100,
+              ),
             ),
             Container(
               color: Colors.white,
               height: 100,
             ),
             Padding(
-              padding: ProjectPadding.pagePaddingRight + ProjectPadding.pagePaddingVertical,
+              padding: ProjectPadding.pagePaddingRight +
+                  ProjectPadding.pagePaddingVertical,
               child: const Text('Ahmet'),
             ),
           ],

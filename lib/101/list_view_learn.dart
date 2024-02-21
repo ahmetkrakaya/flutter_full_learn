@@ -16,48 +16,35 @@ class _ListViewLearnState extends State<ListViewLearn> {
         children: [
           FittedBox(
             child: Text(
-                'Merhaba',
+              'Merhaba',
               style: Theme.of(context).textTheme.displayLarge,
             ),
           ),
           Container(
-            color: Colors.red,
+            color: Colors.green,
             height: 300,
           ),
-          const Divider(),
+          const Divider(
+            color: Colors.white,
+            thickness: 3,
+          ),
           SizedBox(
-            height: 300,
+            height: 500,
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children:[
-                Container(
-                  color: Colors.green,
-                  width: 100,
-                ),
-                Container(
-                  color: Colors.white,
-                  width: 100,
-                ),Container(
-                  color: Colors.green,
-                  width: 100,
-                ),Container(
-                  color: Colors.white,
-                  width: 100,
-                ),
-                Container(
-                  color: Colors.green,
-                  width: 100,
-                ),Container(
-                  color: Colors.white,
-                  width: 100,
-                ),
+              children: [
+                Container(color: Colors.amber, width: 100),
+                Container(color: Colors.red, width: 100),
+                Container(color: Colors.amber, width: 100),
+                Container(color: Colors.red, width: 100),
+                Container(color: Colors.amber, width: 100),
+                Container(color: Colors.red, width: 100),
+                Container(color: Colors.amber, width: 100),
+                Container(color: Colors.red, width: 100),
               ],
             ),
           ),
-          IconButton(
-            onPressed: (){},
-            icon: const Icon(Icons.close),
-          ),
+          const Icon(Icons.close),
         ],
       ),
     );

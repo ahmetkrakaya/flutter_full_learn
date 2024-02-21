@@ -11,11 +11,10 @@ class PageViewLearn extends StatefulWidget {
 }
 
 class _PageViewLearnState extends State<PageViewLearn> {
-
   final _pageController = PageController(/*viewportFraction: 0.9*/);
   int _currentPageIndex = 0;
 
-  void _updatePageIndex(int index){
+  void _updatePageIndex(int index) {
     setState(() {
       _currentPageIndex = index;
     });
@@ -31,27 +30,27 @@ class _PageViewLearnState extends State<PageViewLearn> {
             padding: const EdgeInsets.only(left: 20.0),
             child: Text('$_currentPageIndex'),
           ),
-          Spacer(),
+          const Spacer(),
           Padding(
             padding: const EdgeInsets.only(right: 12.0),
             child: FloatingActionButton(
-              onPressed: (){
+              onPressed: () {
                 _pageController.previousPage(
-                    duration: _DurationUtility._durationLow,
-                    curve: Curves.slowMiddle,
+                  duration: _DurationUtility._durationLow,
+                  curve: Curves.fastLinearToSlowEaseIn,
                 );
               },
-              child: Icon(Icons.chevron_left),
+              child: const Icon(Icons.chevron_left),
             ),
           ),
           FloatingActionButton(
-            onPressed: (){
+            onPressed: () {
               _pageController.nextPage(
                 duration: _DurationUtility._durationLow,
-                curve: Curves.slowMiddle,
+                curve: Curves.fastLinearToSlowEaseIn,
               );
             },
-            child: Icon(Icons.chevron_right),
+            child: const Icon(Icons.chevron_right),
           ),
         ],
       ),
@@ -60,15 +59,15 @@ class _PageViewLearnState extends State<PageViewLearn> {
         padEnds: false,
         onPageChanged: _updatePageIndex,
         children: [
-          ImageLearn(),
+          const ImageLearn(),
           IconLearn(),
-          StackLearn(),
+          const StackLearn(),
         ],
       ),
     );
   }
 }
 
-class _DurationUtility{
+class _DurationUtility {
   static const _durationLow = Duration(seconds: 1);
 }

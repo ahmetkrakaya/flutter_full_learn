@@ -18,9 +18,10 @@ class TextLearnView extends StatelessWidget {
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.headline5?.copyWith(
-                color: ProjectColors.welcomeColor
-              ),
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineSmall
+                  ?.copyWith(color: ProjectColors.welcomeColor),
             ),
             Text(
               'Hi $name: ${name.length}',

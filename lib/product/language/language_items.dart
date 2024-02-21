@@ -1,4 +1,4 @@
-class LanguageItems{
-  static const welcomeTitle = 'AppBar Title';
+class LanguageItems {
+  static const welcomeTitle = 'CountDown';
   static const mailTitle = 'Email';
 }

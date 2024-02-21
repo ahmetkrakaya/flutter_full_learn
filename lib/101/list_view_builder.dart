@@ -14,23 +14,25 @@ class _ListViewBuilderLearnState extends State<ListViewBuilderLearn> {
     return Scaffold(
       appBar: AppBar(),
       body: ListView.separated(
-        separatorBuilder: (context, index){
+        separatorBuilder: (context, index) {
           return const Divider(
             color: Colors.white,
+            thickness: 2,
           );
         },
-          itemBuilder: (context, index){
-            return SizedBox(
-              height: 200,
-              child: Column(
-                children: [
-                  Expanded(child: const RandomImage()),
-                  Text('$index'),
-                ],
-              ),
-            );
-          },
-        itemCount: 15,
+        itemBuilder: (context, index) {
+          return SizedBox(
+            height: 200,
+            child: Column(
+              children: [
+                const SizedBox(height: 8),
+                const Expanded(child: RandomImage()),
+                Text('${index + 1}'),
+              ],
+            ),
+          );
+        },
+        itemCount: 10,
       ),
     );
   }

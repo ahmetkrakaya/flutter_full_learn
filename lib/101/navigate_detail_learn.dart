@@ -9,7 +9,6 @@ class NavigateDetailLearn extends StatefulWidget {
 }
 
 class _NavigateDetailLearnState extends State<NavigateDetailLearn> {
-
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -22,11 +21,13 @@ class _NavigateDetailLearnState extends State<NavigateDetailLearn> {
       appBar: AppBar(),
       body: Center(
         child: ElevatedButton.icon(
-            onPressed: (){
-              Navigator.of(context).pop(!widget.isCheck);
-            },
-            icon: widget.isCheck ? const Icon(Icons.close_outlined,color: Colors.red,) : const Icon(Icons.check_outlined,color: Colors.green,),
-            label: widget.isCheck ? const Text('UnCheck') : const Text('Check'),
+          onPressed: () {
+            Navigator.of(context).pop(!widget.isCheck);
+          },
+          icon: widget.isCheck
+              ? const Icon(Icons.close_outlined, color: Colors.red)
+              : const Icon(Icons.check_outlined, color: Colors.green),
+          label: widget.isCheck ? const Text('UnCheck') : const Text('Check'),
         ),
       ),
     );

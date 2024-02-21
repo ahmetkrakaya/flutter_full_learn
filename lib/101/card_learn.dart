@@ -9,7 +9,7 @@ class CardLearn extends StatelessWidget {
       appBar: AppBar(),
       body: Column(
         children: [
-          _CustomCard(
+          const _CustomCard(
             child: SizedBox(
               height: 100,
               width: 300,
@@ -26,7 +26,7 @@ class CardLearn extends StatelessWidget {
           ),
           Card(
             color: Theme.of(context).colorScheme.onPrimary,
-           // shape: const StadiumBorder(),
+            // shape: const StadiumBorder(),
             child: const SizedBox(
               height: 100,
               width: 300,
@@ -43,7 +43,7 @@ class ProjectMargins {
 }
 
 class _CustomCard extends StatelessWidget {
-  _CustomCard({Key? key, required this.child}) : super(key: key);
+  const _CustomCard({Key? key, required this.child}) : super(key: key);
   final Widget child;
   //final roundedRectangleBorder = RoundedRectangleBorder(borderRadius: BorderRadius.circular(20));
   @override

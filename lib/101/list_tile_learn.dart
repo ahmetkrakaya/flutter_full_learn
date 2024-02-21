@@ -12,17 +12,19 @@ class ListTileLearn extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ListTile(
-                  title: const RandomImage(),
-                  dense: true,
-                  subtitle: const Text('How do you use your card'),
-                  leading: const Icon(Icons.money),
-                  trailing: const Icon(Icons.chevron_right),
-                  onTap: (){},
-                ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                visualDensity: VisualDensity(vertical: 4),
+                title: const Text('Hello Cici'),
+                subtitle: const Text('on sale for \n4.3 ETH'),
+                leading: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: const RandomImage(
+                      width: 70,
+                      height: 80,
+                    )),
+                onTap: () {},
               ),
             ),
           ],
